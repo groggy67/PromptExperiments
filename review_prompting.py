@@ -79,5 +79,5 @@ pipe.add_component("llm", OllamaGenerator(model="llama3.2:latest", url="http://l
 pipe.connect("prompt_builder", "llm")
 
 
-response = result = pipe.run({"prompt_builder": {"query": query, "text": text }})
+response = pipe.run({"prompt_builder": {"query": query, "text": text }})
 print(json.dumps(response["llm"]["replies"], indent=4))
